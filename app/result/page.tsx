@@ -31,15 +31,23 @@ function ResultContent() {
   const type = searchParams.get('type') || 'teto_f';
   const result = (results as Results).types[type];
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: '테토-에겐 테스트 결과',
-        text: `나의 유형은 ${result.title}입니다! 당신의 유형도 알아보세요! ${typeEmojis[type as keyof typeof typeEmojis]}`,
-        url: window.location.href,
-      });
-    }
-  };
+  // const handleShare = async () => {
+  //   try {
+  //     if (navigator.share) {
+  //       await navigator.share({
+  //         title: '테토-에겐 테스트 결과',
+  //         text: `나의 유형은 ${result.title}입니다! 당신의 유형도 알아보세요! ${typeEmojis[type as keyof typeof typeEmojis]}`,
+  //         url: window.location.href,
+  //       });
+  //     } else {
+  //       // 공유 API를 지원하지 않는 경우 링크 복사로 대체
+  //       handleCopyLink();
+  //     }
+  //   } catch (error) {
+  //     // 사용자가 공유를 취소하거나 에러가 발생한 경우
+  //     console.error('공유 중 오류 발생:', error);
+  //   }
+  // };
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -94,12 +102,12 @@ function ResultContent() {
         >
           링크 복사하기 📋
         </button>
-        <button
+        {/* <button
           onClick={handleShare}
           className="block w-full px-4 sm:px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-center text-sm sm:text-base cursor-pointer"
         >
           결과 공유하기 📱
-        </button>
+        </button> */}
       </div>
     </Card>
   );
