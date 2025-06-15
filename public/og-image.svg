@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 그라데이션 -->
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <!-- 메인 텍스트 -->
+  <text x="600" y="280" text-anchor="middle" font-family="Arial" font-size="72" font-weight="bold" fill="#333333">
+    테토-에겐 성격 유형 테스트
+  </text>
+  
+  <!-- 서브 텍스트 -->
+  <text x="600" y="380" text-anchor="middle" font-family="Arial" font-size="36" fill="#666666">
+    당신은 테토? 에겐? 재미있는 성격 유형 테스트로 알아보세요!
+  </text>
+
+  <!-- 그라데이션 정의 -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8d4de"/>
+      <stop offset="100%" stop-color="#bdcabc"/>
+    </linearGradient>
+  </defs>
+</svg> 
