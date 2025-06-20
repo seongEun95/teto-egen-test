@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Analytics } from '@vercel/analytics/next';
+import { LanguageProvider } from '@/lib/language-context';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -77,8 +79,12 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={inter.className}>{children}</body>
-      <Analytics />
+      <body className={inter.className}>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+        <Analytics />
+      </body>
     </html>
   );
 }
